@@ -44,6 +44,6 @@ class User extends Authenticatable
     // Getter des réalisations du user
     public function realisations()
     {
-        return $this->hasMany(Realisation::class);
+        return $this->hasMany('App\Models\Realisation');
     }
 }

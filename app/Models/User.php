@@ -40,4 +40,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Getter des réalisations du user
+    public function realisations()
+    {
+        return $this->hasMany(Realisation::class);
+    }
 }

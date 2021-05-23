@@ -6,3 +6,56 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+html {
+  scroll-behavior: smooth;
+}
+
+.jumbotron.hero {
+  height: 92.2vh;
+  background-image: url('~/assets/images/intro-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0;
+  h1,
+  h2 {
+    color: $couleur2;
+  }
+}
+
+.about {
+  background: $couleur1;
+  h3,
+  p {
+    color: $couleur2;
+  }
+}
+
+.contact {
+  background: $couleur1;
+  h3 {
+    color: $couleur2;
+  }
+  ul {
+    padding-left: 0;
+    list-style: none;
+    i {
+      font-size: 1.5rem;
+      color: $couleur2;
+    }
+  }
+}
+
+footer {
+  background: $couleur1;
+  color: $couleur2;
+  border-top: 2px solid $couleur3;
+}
+
+.custom-form-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

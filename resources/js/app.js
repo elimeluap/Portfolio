@@ -26,8 +26,13 @@ window.Vue = require('vue').default;
  */
 
 import router from './router.js';
+import store from './store/index.js';
 
 const app = new Vue({
   el: '#app',
   router,
+  store,
+  created() {
+    this.$store.dispatch('setRealisations');
+  },
 });

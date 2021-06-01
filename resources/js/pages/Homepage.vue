@@ -62,16 +62,13 @@ export default {
     Footer,
   },
   data() {
-    return {
-      realisations: [],
-    };
+    return {};
   },
   methods: {},
-  computed: {},
-  created() {
-    axios
-      .get("api/realisations")
-      .then((response) => (this.realisations = response.data));
+  computed: {
+    realisations() {
+      return this.$store.getters.getRealisations;
+    },
   },
 };
 </script>

@@ -4,68 +4,78 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Http\Response;
-use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        $fields = $request->validate([
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string',
             'email' => 'required|string|unique:users,email',
             'password' => 'required|string|confirmed'
         ]);
 
-        $user = User::create([
-            'name' => $fields['name'],
-            'email' => $fields['email'],
-            'password' => bcrypt($fields['password'])
+        if ($validator->fails()) {
+            return response()->json([
+                'status_code' => 400,
+                'message' => 'Erreur dans la requête'
+            ]);
+        }
+
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = bcrypt($request->password);
+        $user->save();
+
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'L\'utilisateur a bien été créé'
         ]);
-
-        $token = $user->createToken('myapptoken')->plainTextToken;
-
-        $response = [
-            'user' => $user,
-            'token' => $token
-        ];
-
-        return response($response, 201);
     }
 
     public function login(Request $request)
     {
-        $fields = $request->validate([
+        $validator = Validator::make($request->all(), [
             'email' => 'required|string',
             'password' => 'required|string'
         ]);
 
-        // Vérification email
-        $user = User::where('email', $fields['email'])->first();
-
-        // Vérification mot de passe
-        if (!$user || !Hash::check($fields['password'], $user->password)) {
-            return response([
-                'message' => 'Mauvais identifiants'
-            ], 401);
+        if ($validator->fails()) {
+            return response()->json([
+                'status_code' => 400,
+                'message' => 'Erreur dans la requête'
+            ]);
         }
 
-        $token = $user->createToken('myapptoken')->plainTextToken;
+        $credentials = request(['email', 'password']);
 
-        $response = [
-            'user' => $user,
-            'token' => $token
-        ];
+        if (!Auth::attempt($credentials)) {
+            return response()->json([
+                'status_code' => 500,
+                'message' => 'Vous n\'êtes pas autorisé'
+            ]);
+        }
 
-        return response($response, 201);
+        $user = User::where('email', $request->email)->first();
+
+        $tokenResult = $user->createToken('authToken')->plainTextToken;
+
+        return response()->json([
+            'status_code' => 200,
+            'token' => $tokenResult
+        ]);
     }
 
     public function logout(Request $request)
     {
-        auth()->user()->tokens()->delete();
+        $request->user()->currentAccessToken()->delete;
 
-        return [
-            'message' => 'Vous avez été déconnecté avec succès'
-        ];
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'Le token a bien été supprimé'
+        ]);
     }
 }

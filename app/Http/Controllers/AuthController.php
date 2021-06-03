@@ -20,7 +20,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'status_code' => 400,
-                'message' => 'Erreur dans la requête'
+                'message' => 'Bad request'
             ]);
         }
 
@@ -32,7 +32,7 @@ class AuthController extends Controller
 
         return response()->json([
             'status_code' => 200,
-            'message' => 'L\'utilisateur a bien été créé'
+            'message' => 'User created successfully!'
         ]);
     }
 
@@ -46,7 +46,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'status_code' => 400,
-                'message' => 'Erreur dans la requête'
+                'message' => 'Bad request'
             ]);
         }
 
@@ -55,7 +55,7 @@ class AuthController extends Controller
         if (!Auth::attempt($credentials)) {
             return response()->json([
                 'status_code' => 500,
-                'message' => 'Vous n\'êtes pas autorisé'
+                'message' => 'Unauthorized'
             ]);
         }
 
@@ -65,6 +65,7 @@ class AuthController extends Controller
 
         return response()->json([
             'status_code' => 200,
+            'message' => 'Token created successfully!',
             'token' => $tokenResult
         ]);
     }
@@ -75,7 +76,7 @@ class AuthController extends Controller
 
         return response()->json([
             'status_code' => 200,
-            'message' => 'Le token a bien été supprimé'
+            'message' => 'Token deleted successfully!'
         ]);
     }
 }

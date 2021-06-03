@@ -60,7 +60,25 @@ export default {
   },
   methods: {
     loginUser() {
-      console.log(this.formData);
+      axios.get("/sanctum/csrf-cookie").then((res) => {
+        axios
+          .post("/api/login", this.formData)
+          .then((res) => {
+            console.log(res);
+            if (res.data.status_code === 200) {
+              this.$notify.success({
+                msg: "Vous êtes connecté",
+              });
+              this.$router.push({ name: "homepage" });
+            } else if (res.data.status_code === 400) {
+              this.$notify.error({
+                msg:
+                  "Une erreur s'est produite. Veuillez vérifier vos identifiants.",
+              });
+            }
+          })
+          .catch((error) => console.log(error));
+      });
     },
   },
   computed: {},

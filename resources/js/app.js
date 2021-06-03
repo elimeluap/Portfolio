@@ -27,6 +27,12 @@ window.Vue = require('vue').default;
 
 import router from './router.js';
 import store from './store/index.js';
+import VueNotify from 'vuejs-notify';
+
+Vue.use(VueNotify, {
+  position: 'bottom center',
+  closeOnClick: true,
+});
 
 const app = new Vue({
   el: '#app',

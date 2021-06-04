@@ -66,7 +66,8 @@ class AuthController extends Controller
         return response()->json([
             'status_code' => 200,
             'message' => 'Token created successfully!',
-            'token' => $tokenResult
+            'token' => $tokenResult,
+            'user' => $user
         ]);
     }
 

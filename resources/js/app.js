@@ -39,6 +39,11 @@ const app = new Vue({
   router,
   store,
   created() {
+    if (sessionStorage.getItem('user')) {
+      let logInfos = sessionStorage.getItem('user');
+      let logInfosJSON = JSON.parse(logInfos);
+      this.$store.dispatch('loginUser', logInfosJSON);
+    }
     this.$store.dispatch('setRealisations');
   },
 });

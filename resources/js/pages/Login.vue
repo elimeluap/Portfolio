@@ -69,8 +69,15 @@ export default {
               this.$notify.success({
                 msg: "Vous êtes connecté",
               });
-              this.$router.push({ name: "homepage" });
+              this.$store.dispatch("loginUser", res.data);
+              let logInfos = JSON.stringify(res.data);
+              sessionStorage.setItem("user", logInfos);
+              this.$router.push({ name: "dashboard" });
             } else if (res.data.status_code === 400) {
+              this.$notify.error({
+                msg: "Une erreur s'est produite. Veuillez réessayer.",
+              });
+            } else if (res.data.status_code === 500) {
               this.$notify.error({
                 msg:
                   "Une erreur s'est produite. Veuillez vérifier vos identifiants.",

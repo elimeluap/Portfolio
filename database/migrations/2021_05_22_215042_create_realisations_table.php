@@ -21,6 +21,7 @@ class CreateRealisationsTable extends Migration
             $table->string('github_link', 100)->nullable();
             $table->string('live_link', 100)->nullable();
             $table->timestamps();
+            $table->foreignId('user_id');
         });
     }
 

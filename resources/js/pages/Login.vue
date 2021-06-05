@@ -79,8 +79,7 @@ export default {
               });
             } else if (res.data.status_code === 500) {
               this.$notify.error({
-                msg:
-                  "Une erreur s'est produite. Veuillez vérifier vos identifiants.",
+                msg: "Une erreur s'est produite. Veuillez vérifier vos identifiants.",
               });
             }
           })

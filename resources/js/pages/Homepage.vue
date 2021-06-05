@@ -8,13 +8,19 @@
       <div class="container">
         <h3 class="my-4 text-center">Réalisations</h3>
         <div
-          class="d-flex flex-column flex-md-row flex-wrap justify-content-md-center align-items-center align-items-md-start overflow-hidden"
+          class="
+            d-flex
+            flex-column flex-md-row flex-wrap
+            justify-content-md-center
+            align-items-center align-items-md-start
+            overflow-hidden
+          "
         >
           <div v-for="realisation in realisations" :key="realisation.id">
             <div class="card mb-4 mr-md-4" style="width: 18rem">
               <img
                 class="card-img-top"
-                :src="`assets/images/${realisation.image}`"
+                :src="`assets/images/realisations/${realisation.image}`"
                 :alt="`Screen ${realisation.name}`"
               />
               <div class="card-body">

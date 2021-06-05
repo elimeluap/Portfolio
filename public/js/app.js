@@ -2209,7 +2209,21 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {};
   },
-  methods: {},
+  methods: {
+    logoutUser: function logoutUser() {
+      sessionStorage.clear();
+      this.$store.dispatch("logoutUser");
+
+      if (!sessionStorage.length) {
+        this.$notify.success({
+          msg: "Vous êtes déconnecté"
+        });
+        this.$router.push({
+          name: "login"
+        });
+      }
+    }
+  },
   computed: {}
 });
 
@@ -2824,6 +2838,10 @@ var actions = {
   loginUser: function loginUser(_ref2, data) {
     var commit = _ref2.commit;
     commit('LOGIN_USER', data);
+  },
+  logoutUser: function logoutUser(_ref3) {
+    var commit = _ref3.commit;
+    commit('LOGOUT_USER');
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (actions);
@@ -2911,6 +2929,10 @@ var mutations = {
   LOGIN_USER: function LOGIN_USER(state, data) {
     state.token = data.token;
     state.user = data.user;
+  },
+  LOGOUT_USER: function LOGOUT_USER(state) {
+    state.token = null;
+    state.user = null;
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mutations);
@@ -44594,7 +44616,17 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _vm._m(1)
+                _c("li", { staticClass: "nav-item active" }, [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "nav-link",
+                      attrs: { href: "#" },
+                      on: { click: _vm.logoutUser }
+                    },
+                    [_vm._v("Logout")]
+                  )
+                ])
               ])
             ]
           )
@@ -44624,16 +44656,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "navbar-toggler-icon" })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "nav-item active" }, [
-      _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-        _vm._v("Logout")
-      ])
-    ])
   }
 ]
 render._withStripped = true

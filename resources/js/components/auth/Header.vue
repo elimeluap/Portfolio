@@ -28,7 +28,7 @@
               >
             </li>
             <li class="nav-item active">
-              <a href="#" class="nav-link">Logout</a>
+              <a href="#" class="nav-link" @click="logoutUser">Logout</a>
             </li>
           </ul>
         </div>
@@ -42,7 +42,18 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    logoutUser() {
+      sessionStorage.clear();
+      this.$store.dispatch("logoutUser");
+      if (!sessionStorage.length) {
+        this.$notify.success({
+          msg: "Vous êtes déconnecté",
+        });
+        this.$router.push({ name: "login" });
+      }
+    },
+  },
   computed: {},
 };
 </script>

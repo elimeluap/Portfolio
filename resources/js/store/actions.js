@@ -8,6 +8,9 @@ let actions = {
   loginUser({ commit }, data) {
     commit('LOGIN_USER', data);
   },
+  logoutUser({ commit }) {
+    commit('LOGOUT_USER');
+  },
 };
 
 export default actions;

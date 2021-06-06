@@ -82,4 +82,15 @@ class RealisationsController extends Controller
             'message' => 'Realisation updated successfully!'
         ]);
     }
+
+    public function delete(Request $request)
+    {
+        $realisation = Realisation::find($request->id);
+        $realisation->delete();
+
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'Realisation deleted successfully!'
+        ]);
+    }
 }

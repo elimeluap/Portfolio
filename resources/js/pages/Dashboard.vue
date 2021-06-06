@@ -45,8 +45,10 @@
                     class="btn btn-success btn-small mb-2"
                     >Editer</router-link
                   >
-                  <router-link :to="{}" class="btn btn-danger btn-small"
-                    >Supprimer</router-link
+                  <b-button
+                    @click="deleteRealisation(realisation.id)"
+                    variant="danger"
+                    >Supprimer</b-button
                   >
                 </td>
               </tr>
@@ -71,7 +73,45 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    deleteRealisation(id) {
+      this.$bvModal
+        .msgBoxConfirm(
+          "Etes-vous sûr de vouloir supprimer cette réalisation ?",
+          {
+            title: "Supprimer la réalisation",
+            size: "sm",
+            buttonSize: "sm",
+            okVariant: "danger",
+            cancelVariant: "primary",
+            okTitle: "Oui",
+            cancelTitle: "Annuler",
+            footerClass: "bg-white p-2",
+            hideHeaderClose: false,
+            centered: true,
+          }
+        )
+        .then((value) => {
+          if (value === true) {
+            axios
+              .post("/api/delete", { id: id })
+              .then((res) => {
+                console.log(res);
+                if (res.data.status_code === 200) {
+                  this.$notify.success({
+                    msg: "La réalisation a bien été supprimée",
+                  });
+                  this.$store.dispatch("setRealisations", res.data);
+                }
+              })
+              .catch((error) => console.log(error.response));
+          }
+        })
+        .catch((error) => {
+          console.log(error.response);
+        });
+    },
+  },
   computed: {
     userInfos() {
       return this.$store.getters.getUserInfos;

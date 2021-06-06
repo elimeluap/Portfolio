@@ -42,7 +42,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // Getter des réalisations du user
+    /**
+     * Getter des réalisations du user
+     *
+     * @return  [type]  [return description]
+     */
     public function realisations()
     {
         return $this->hasMany('App\Models\Realisation');

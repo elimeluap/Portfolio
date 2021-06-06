@@ -30,17 +30,25 @@ import store from './store/index.js';
 import VueNotify from 'vuejs-notify';
 import { BootstrapVue } from 'bootstrap-vue';
 
+// Plugin Vue pour les notifications
 Vue.use(VueNotify, {
   position: 'bottom center',
   closeOnClick: true,
 });
 
+// Plugin Vue pour intégrer des composants Bootstrap
 Vue.use(BootstrapVue);
 
 const app = new Vue({
   el: '#app',
   router,
   store,
+  /**
+   * À la création de l'instance de Vue:
+   * On vérifie si le sessionStorage contient les informations de l'utilisateur
+   * Si c'est le cas, on les récupère et on les sauvegarde dans le state du store
+   * On lance l'action qui met à jour les réalisations dans le state du store
+   */
   created() {
     if (sessionStorage.getItem('user')) {
       let logInfos = sessionStorage.getItem('user');

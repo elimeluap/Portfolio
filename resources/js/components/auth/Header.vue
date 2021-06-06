@@ -43,6 +43,9 @@ export default {
     return {};
   },
   methods: {
+    /**
+     * Réinitialisation du session storage et des infos de l'utilisateur dans le state
+     */
     logoutUser() {
       sessionStorage.clear();
       this.$store.dispatch("logoutUser");

@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-
 import store from './store/index';
 
 // Chargement des composants des différentes routes

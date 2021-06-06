@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <form class="card" v-on:submit.prevent="loginUser">
+          <form class="card" @submit.prevent="loginUser">
             <h3 class="card-header bg-primary text-secondary">Connexion</h3>
             <div class="card-body">
               <div class="form-group">
@@ -59,12 +59,18 @@ export default {
     };
   },
   methods: {
+    /**
+     * Connexion de l'utilisateur
+     * Réception des données de l'API
+     * Mise à jour du state du store
+     * Stockage des informations dans le sessionStorage
+     * Redirection vers le composant Dashboard
+     */
     loginUser() {
       axios.get("/sanctum/csrf-cookie").then((res) => {
         axios
           .post("/api/login", this.formData)
           .then((res) => {
-            console.log(res);
             if (res.data.status_code === 200) {
               this.$notify.success({
                 msg: "Vous êtes connecté",
@@ -83,7 +89,9 @@ export default {
               });
             }
           })
-          .catch((error) => console.log(error));
+          .catch((error) => {
+            console.log(error);
+          });
       });
     },
   },

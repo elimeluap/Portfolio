@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <form class="card" v-on:submit.prevent="add">
+            <form class="card" @submit.prevent="add">
               <h3 class="card-header bg-light">Ajouter une réalisation</h3>
               <div class="card-body">
                 <div class="form-group">
@@ -98,8 +98,10 @@ export default {
     };
   },
   methods: {
+    /**
+     * Ajout d'une réalisation
+     */
     add() {
-      console.log(this.formData);
       let formData = new FormData();
       formData.append("name", this.formData.name);
       formData.append("description", this.formData.description);
@@ -110,7 +112,6 @@ export default {
       axios
         .post("/api/add", formData)
         .then((res) => {
-          console.log(res);
           if (res.data.status_code === 200) {
             this.$notify.success({
               msg: "Votre réalisation a bien été ajoutée",
@@ -123,6 +124,9 @@ export default {
           console.log(error.response);
         });
     },
+    /**
+     * Gestion de l'upload de l'image et de sa preview
+     */
     imageHandling(e) {
       this.formData.image = e.target.files[0];
 

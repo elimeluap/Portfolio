@@ -5,7 +5,7 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6">
-            <form class="card" v-on:submit.prevent="edit">
+            <form class="card" @submit.prevent="edit">
               <h3 class="card-header bg-light">Editer une réalisation</h3>
               <div class="card-body">
                 <div class="form-group">
@@ -105,8 +105,10 @@ export default {
     };
   },
   methods: {
+    /**
+     * Edition d'une réalisation
+     */
     edit() {
-      console.log(this.formData);
       let formData = new FormData();
       formData.append("id", this.formData.id);
       formData.append("name", this.formData.name);
@@ -118,7 +120,6 @@ export default {
       axios
         .post("/api/edit", formData)
         .then((res) => {
-          console.log(res);
           if (res.data.status_code === 200) {
             this.$notify.success({
               msg: "Votre réalisation a bien été modifiée",
@@ -131,6 +132,9 @@ export default {
           console.log(error.response);
         });
     },
+    /**
+     * Gestion de l'upload de l'image et de sa preview
+     */
     imageHandling(e) {
       this.formData.image = e.target.files[0];
 
@@ -142,11 +146,17 @@ export default {
     },
   },
   computed: {
+    /**
+     * Permet d'obtenir les infos de la réalisation qu'on consulte
+     */
     realisation() {
       let id = this.$route.params.id;
       return this.$store.getters.getRealisationById(id);
     },
   },
+  /**
+   * Hydratation des données de la réalisation à la création de l'instance de Vue
+   */
   created() {
     this.formData.name = this.realisation.name;
     this.formData.description = this.realisation.description;

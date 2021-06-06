@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6">
-          <form class="card" v-on:submit.prevent="registerUser">
+          <form class="card" @submit.prevent="registerUser">
             <h3 class="card-header bg-primary text-secondary">
               Créer un compte
             </h3>
@@ -83,12 +83,14 @@ export default {
     };
   },
   methods: {
+    /**
+     * Enregistrement d'un utilisateur
+     */
     registerUser() {
       axios.get("/sanctum/csrf-cookie").then((res) => {
         axios
           .post("/api/register", this.formData)
           .then((res) => {
-            console.log(res);
             if (res.data.status_code === 200) {
               this.$notify.success({
                 msg: `Votre compte a bien été créé`,
@@ -96,12 +98,13 @@ export default {
               this.$router.push({ name: "login" });
             } else if (res.data.status_code === 400) {
               this.$notify.error({
-                msg:
-                  "Une erreur s'est produite. Veuillez vérifier que vous avez bien rempli tous les champs.",
+                msg: "Une erreur s'est produite. Veuillez vérifier que vous avez bien rempli tous les champs.",
               });
             }
           })
-          .catch((error) => console.log(error));
+          .catch((error) => {
+            console.log(error);
+          });
       });
     },
   },

@@ -7,11 +7,23 @@ use App\Models\Realisation;
 
 class RealisationsController extends Controller
 {
+    /**
+     * Return toutes les réalisations au format json
+     *
+     * @return  json
+     */
     public function index()
     {
         return response()->json(Realisation::all());
     }
 
+    /**
+     * Ajout d'une réalisation
+     *
+     * @param   Request  $request
+     *
+     * @return  json
+     */
     public function add(Request $request)
     {
         $request->validate([
@@ -42,6 +54,13 @@ class RealisationsController extends Controller
         ]);
     }
 
+    /**
+     * Modification d'une réalisation
+     *
+     * @param   Request  $request
+     *
+     * @return  json
+     */
     public function edit(Request $request)
     {
         $realisation = Realisation::find($request->id);
@@ -83,6 +102,13 @@ class RealisationsController extends Controller
         ]);
     }
 
+    /**
+     * Suppression d'une réalisation
+     *
+     * @param   Request  $request
+     *
+     * @return  json
+     */
     public function delete(Request $request)
     {
         $realisation = Realisation::find($request->id);

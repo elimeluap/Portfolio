@@ -76,18 +76,27 @@ export default {
     };
   },
   methods: {
+    /**
+     * Envoi d'un mail à une adresse définie à partir du formulaire de contact
+     */
     sendContactMail() {
       axios
         .post("/api/send-contact-mail", this.formData)
         .then((res) => {
-          console.log(res);
           if (res.data.status_code === 200) {
             this.$notify.success({
               msg: "Votre email a bien été envoyé",
             });
           }
         })
-        .catch((error) => console.log(error.response));
+        .catch((error) => {
+          console.log(error.response);
+          if (error.response.status === 500) {
+            this.$notify.error({
+              msg: "Veuillez remplir tous les champs du formulaire",
+            });
+          }
+        });
     },
   },
   computed: {},

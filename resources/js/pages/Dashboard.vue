@@ -74,6 +74,10 @@ export default {
     return {};
   },
   methods: {
+    /**
+     * Suppression d'une réalisation
+     * Modal box BootstrapVue pour la confirmation de l'action
+     */
     deleteRealisation(id) {
       this.$bvModal
         .msgBoxConfirm(
@@ -96,7 +100,6 @@ export default {
             axios
               .post("/api/delete", { id: id })
               .then((res) => {
-                console.log(res);
                 if (res.data.status_code === 200) {
                   this.$notify.success({
                     msg: "La réalisation a bien été supprimée",
@@ -104,7 +107,9 @@ export default {
                   this.$store.dispatch("setRealisations", res.data);
                 }
               })
-              .catch((error) => console.log(error.response));
+              .catch((error) => {
+                console.log(error.response);
+              });
           }
         })
         .catch((error) => {
@@ -113,12 +118,18 @@ export default {
     },
   },
   computed: {
+    /**
+     * Permet d'obtenir les informations de l'utilisateur connecté
+     */
     userInfos() {
       return this.$store.getters.getUserInfos;
     },
+    /**
+     * Permet d'obtenir les réalisations de l'utilisateur connecté
+     */
     userRealisations() {
       let id = this.userInfos.id;
-      return this.$store.getters.getUserRealisations(id);
+      return this.$store.getters.getRealisationsByUser(id);
     },
   },
 };

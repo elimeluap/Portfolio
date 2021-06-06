@@ -72,6 +72,9 @@ export default {
   },
   methods: {},
   computed: {
+    /**
+     * Permet d'obtenir toutes les réalisations
+     */
     realisations() {
       return this.$store.getters.getRealisations;
     },

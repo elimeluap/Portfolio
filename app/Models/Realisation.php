@@ -18,7 +18,11 @@ class Realisation extends Model
         'user_id'
     ];
 
-    // Getter du user à qui appartient les réalisations
+    /**
+     * Getter du user à qui appartient les réalisations
+     *
+     * @return  [type]  [return description]
+     */
     public function user()
     {
         return $this->belongsTo('App\Models\User');

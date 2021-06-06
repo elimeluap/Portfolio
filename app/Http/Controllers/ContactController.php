@@ -8,6 +8,13 @@ use App\Mail\ContactMail;
 
 class ContactController extends Controller
 {
+    /**
+     * Envoi d'un mail à partir du formulaire de contact
+     *
+     * @param   Request  $request
+     *
+     * @return  json
+     */
     public function send(Request $request)
     {
         $details = [

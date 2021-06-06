@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    /**
+     * Enregistrement d'un utilisateur
+     *
+     * @param   Request  $request
+     *
+     * @return  json
+     */
     public function register(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -36,6 +43,13 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Connexion d'un utilisateur
+     *
+     * @param   Request  $request
+     *
+     * @return  json
+     */
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -71,6 +85,13 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Déconnexion d'un utilisateur
+     *
+     * @param   Request  $request
+     *
+     * @return  json
+     */
     public function logout(Request $request)
     {
         $request->user()->currentAccessToken()->delete;

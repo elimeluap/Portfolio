@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RealisationsController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('/realisations', RealisationsController::class, ['except' => ['show', 'create', 'edit']]);
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/send-contact-mail', [ContactController::class, 'send']);
 
 // Routes protégées
 Route::group(['middleware' => ['auth:sanctum']], function () {

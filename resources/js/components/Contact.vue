@@ -3,7 +3,7 @@
   <section class="py-4 contact" id="contact">
     <div class="container">
       <h3 class="my-4 text-center">Me contacter</h3>
-      <form class="py-4">
+      <form class="py-4" @submit.prevent="sendContactMail">
         <div class="form-row">
           <div class="form-group col-md-6">
             <input
@@ -11,6 +11,7 @@
               class="form-control"
               id="inputName"
               placeholder="Nom"
+              v-model="formData.name"
             />
           </div>
           <div class="form-group col-md-6">
@@ -19,6 +20,7 @@
               class="form-control"
               id="inputEmail"
               placeholder="Email"
+              v-model="formData.email"
             />
           </div>
           <div class="form-group col-md-12">
@@ -27,6 +29,7 @@
               class="form-control"
               id="inputMessage"
               placeholder="Message"
+              v-model="formData.message"
             ></textarea>
           </div>
         </div>
@@ -64,12 +67,31 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      formData: {
+        name: "",
+        email: "",
+        message: "",
+      },
+    };
   },
-  methods: {},
+  methods: {
+    sendContactMail() {
+      axios
+        .post("/api/send-contact-mail", this.formData)
+        .then((res) => {
+          console.log(res);
+          if (res.data.status_code === 200) {
+            this.$notify.success({
+              msg: "Votre email a bien été envoyé",
+            });
+          }
+        })
+        .catch((error) => console.log(error.response));
+    },
+  },
   computed: {},
 };
 </script>
 
-<style>
-</style>
+<style></style>

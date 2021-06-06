@@ -40,7 +40,9 @@
                   <a :href="realisation.live_link" target="_blank">Live</a>
                 </td>
                 <td scope="row">
-                  <router-link :to="{}" class="btn btn-success btn-small mb-2"
+                  <router-link
+                    :to="{ name: 'edit', params: { id: realisation.id } }"
+                    class="btn btn-success btn-small mb-2"
                     >Editer</router-link
                   >
                   <router-link :to="{}" class="btn btn-danger btn-small"

@@ -41,4 +41,45 @@ class RealisationsController extends Controller
             'message' => 'Realisation created successfully!'
         ]);
     }
+
+    public function edit(Request $request)
+    {
+        $realisation = Realisation::find($request->id);
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'nullable',
+            'image' => 'nullable',
+            'github_link' => 'nullable',
+            'live_link' => 'nullable',
+            'user_id' => 'required'
+        ]);
+
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->storeAs('realisations/images', $imageName);
+            $request->image->move(public_path('assets/images/realisations'), $imageName);
+            $realisation->update($request->only([
+                'name',
+                'description',
+                'github_link',
+                'live_link',
+                'user_id'
+            ]) +
+                ['image' => $imageName]);
+        } else {
+            $realisation->update($request->only([
+                'name',
+                'description',
+                'github_link',
+                'live_link',
+                'user_id'
+            ]));
+        }
+
+        return response()->json([
+            'status_code' => 200,
+            'message' => 'Realisation updated successfully!'
+        ]);
+    }
 }

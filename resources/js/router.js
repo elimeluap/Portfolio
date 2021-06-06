@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Add from './pages/Add';
+import Edit from './pages/Edit';
 
 // Création du routing
 Vue.use(Router);
@@ -47,6 +48,18 @@ export default new Router({
       path: '/add',
       name: 'add',
       component: Add,
+      beforeEnter(to, from, next) {
+        if (store.state.token) {
+          next();
+        } else {
+          next('/login');
+        }
+      },
+    },
+    {
+      path: '/edit/:id',
+      name: 'edit',
+      component: Edit,
       beforeEnter(to, from, next) {
         if (store.state.token) {
           next();

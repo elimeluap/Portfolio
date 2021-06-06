@@ -2,6 +2,11 @@ let getters = {
   getRealisations(state) {
     return state.realisations;
   },
+  getRealisationById(state) {
+    return function(id) {
+      return state.realisations.find((realisation) => realisation.id === id);
+    };
+  },
   getUserInfos(state) {
     return state.user;
   },

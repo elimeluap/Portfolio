@@ -27,7 +27,9 @@
               </a>
               <div class="card-body">
                 <h5 class="card-title">{{ realisation.name }}</h5>
-                <p class="card-text">{{ realisation.description }}</p>
+                <p class="card-text" v-html="realisation.description">
+                  {{ realisation.description }}
+                </p>
               </div>
               <!--<ul class="list-group list-group-flush">
                 <li class="list-group-item">JavaScript</li>

@@ -22,7 +22,9 @@
             <tbody>
               <tr v-for="realisation in userRealisations" :key="realisation.id">
                 <th scope="row">{{ realisation.name }}</th>
-                <td scope="row">{{ realisation.description }}</td>
+                <td scope="row" v-html="realisation.description">
+                  {{ realisation.description }}
+                </td>
                 <td scope="row">
                   <img
                     :src="`assets/images/realisations/${realisation.image}`"

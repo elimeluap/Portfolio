@@ -19,14 +19,21 @@
                   <p class="text-danger"></p>
                 </div>
                 <div class="form-group">
-                  <textarea
+                  <!--<textarea
                     class="form-control"
                     name="description"
                     placeholder="Description"
                     cols="60"
                     rows="5"
                     v-model="formData.description"
-                  ></textarea>
+                  ></textarea>-->
+                  <editor
+                    name="description"
+                    placeholder="Description"
+                    theme="snow"
+                    :options="options"
+                    v-model="formData.description"
+                  ></editor>
                 </div>
                 <div class="form-group">
                   <input
@@ -93,6 +100,19 @@ export default {
         github_link: "",
         live_link: "",
         user_id: this.$store.state.user.id,
+      },
+      options: {
+        modules: {
+          toolbar: [
+            ["bold", "italic", "underline", "strike"],
+            [
+              { list: "ordered" },
+              { list: "bullet" },
+              { indent: "-1" },
+              { indent: "+1" },
+            ],
+          ],
+        },
       },
       imagePreview: null,
     };

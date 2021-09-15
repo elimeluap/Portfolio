@@ -29,6 +29,8 @@ import router from './router.js';
 import store from './store/index.js';
 import VueNotify from 'vuejs-notify';
 import { BootstrapVue } from 'bootstrap-vue';
+import '@morioh/v-quill-editor/dist/editor.css';
+import Editor from '@morioh/v-quill-editor';
 
 // Plugin Vue pour les notifications
 Vue.use(VueNotify, {
@@ -38,6 +40,9 @@ Vue.use(VueNotify, {
 
 // Plugin Vue pour intégrer des composants Bootstrap
 Vue.use(BootstrapVue);
+
+// Plugin Vue pour intégrer un éditeur Rich Text
+Vue.use(Editor);
 
 const app = new Vue({
   el: '#app',

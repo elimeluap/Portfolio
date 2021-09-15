@@ -18,11 +18,13 @@
         >
           <div v-for="realisation in realisations" :key="realisation.id">
             <div class="card mb-4 mr-md-4" style="width: 18rem">
-              <img
-                class="card-img-top"
-                :src="`assets/images/realisations/${realisation.image}`"
-                :alt="`Screen ${realisation.name}`"
-              />
+              <a :href="realisation.live_link" target="_blank">
+                <img
+                  class="card-img-top"
+                  :src="`assets/images/realisations/${realisation.image}`"
+                  :alt="`Screen ${realisation.name}`"
+                />
+              </a>
               <div class="card-body">
                 <h5 class="card-title">{{ realisation.name }}</h5>
                 <p class="card-text">{{ realisation.description }}</p>
@@ -36,10 +38,17 @@
                 <a
                   v-if="realisation.github_link !== null"
                   :href="realisation.github_link"
+                  target="_blank"
                   class="card-link"
                   >GitHub</a
                 >
-                <a :href="realisation.live_link" class="card-link">Live</a>
+                <a
+                  v-if="realisation.live_link !== null"
+                  :href="realisation.live_link"
+                  target="_blank"
+                  class="card-link"
+                  >Live</a
+                >
               </div>
             </div>
           </div>
@@ -82,5 +91,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

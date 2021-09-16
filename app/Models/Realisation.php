@@ -27,4 +27,14 @@ class Realisation extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    /**
+     * Getter des tags de la réalisation
+     *
+     * @return  [type]  [return description]
+     */
+    public function tags()
+    {
+        return $this->belongsToMany('App\Models\Tag');
+    }
 }

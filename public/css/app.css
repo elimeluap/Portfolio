@@ -12592,6 +12592,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.table thead th {
+  border-bottom: none;
+}
+
 .jumbotron.hero {
   height: 92.2vh;
   background-image: url(/images/intro-bg.jpg?d5c958ae920f6f0c4484c5776dcdbddd);

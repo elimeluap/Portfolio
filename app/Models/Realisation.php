@@ -13,6 +13,7 @@ class Realisation extends Model
         'name',
         'description',
         'image',
+        'tags',
         'github_link',
         'live_link',
         'user_id'

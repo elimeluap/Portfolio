@@ -50,6 +50,16 @@
                   </div>
                 </div>
                 <div class="form-group">
+                  <b-form-tags
+                    input-id="tags-pills"
+                    v-model="formData.tags"
+                    tag-variant="primary"
+                    size="md"
+                    separator=" "
+                    placeholder="Tags"
+                  ></b-form-tags>
+                </div>
+                <div class="form-group">
                   <input
                     type="text"
                     class="form-control"
@@ -97,6 +107,7 @@ export default {
         name: "",
         description: "",
         image: null,
+        tags: [],
         github_link: "",
         live_link: "",
         user_id: this.$store.state.user.id,
@@ -126,6 +137,7 @@ export default {
       formData.append("name", this.formData.name);
       formData.append("description", this.formData.description);
       formData.append("image", this.formData.image);
+      formData.append("tags", this.formData.tags);
       formData.append("github_link", this.formData.github_link);
       formData.append("live_link", this.formData.live_link);
       formData.append("user_id", this.formData.user_id);

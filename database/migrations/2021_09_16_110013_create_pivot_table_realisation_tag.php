@@ -14,10 +14,10 @@ class CreatePivotTableRealisationTag extends Migration
     public function up()
     {
         Schema::create('realisation_tag', function (Blueprint $table) {
-            $table->id();
+            //$table->id();
             $table->bigInteger('realisation_id')->unsigned();
             $table->bigInteger('tag_id')->unsigned();
-            $table->timestamps();
+            //$table->timestamps();
             $table->foreign('realisation_id')->references('id')->on('realisations')->onDelete('cascade');
             $table->foreign('tag_id')->references('id')->on('tags')->onDelete('cascade');
         });

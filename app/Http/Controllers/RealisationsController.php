@@ -125,6 +125,7 @@ class RealisationsController extends Controller
     public function delete(Request $request)
     {
         $realisation = Realisation::find($request->id);
+        $realisation->tags()->detach();
         $realisation->delete();
 
         return response()->json([

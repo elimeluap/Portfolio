@@ -11,7 +11,7 @@ let getters = {
    */
   getRealisationById(state) {
     return function(id) {
-      return state.realisations.find((realisation) => realisation.id === id);
+      return state.realisations.find(realisation => realisation.id === id);
     };
   },
 
@@ -21,8 +21,19 @@ let getters = {
   getRealisationsByUser(state) {
     return function(id) {
       return state.realisations.filter(
-        (realisation) => realisation.user_id === id
+        realisation => realisation.user_id === id
       );
+    };
+  },
+
+  /**
+   * Return les tags d'une réalisation donnée
+   */
+  getTagsByRealisation(state) {
+    return function(id) {
+      return state.realisations.map(realisation => {
+        return realisation.tags.filter(tag => tag.pivot.realisation_id === id);
+      });
     };
   },
 

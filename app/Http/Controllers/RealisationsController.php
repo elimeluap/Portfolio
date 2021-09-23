@@ -15,7 +15,7 @@ class RealisationsController extends Controller
      */
     public function index()
     {
-        return response()->json(Realisation::all());
+        return response()->json(Realisation::with('tags')->get());
     }
 
     /**
@@ -79,32 +79,35 @@ class RealisationsController extends Controller
             'name' => 'required',
             'description' => 'nullable',
             'image' => 'nullable',
+            'tags' => 'nullable',
             'github_link' => 'nullable',
             'live_link' => 'nullable',
             'user_id' => 'required'
         ]);
 
+        $realisation->name = $request->name;
+        $realisation->description = $request->description;
+
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->extension();
             $request->image->storeAs('realisations/images', $imageName);
             $request->image->move(public_path('assets/images/realisations'), $imageName);
-            $realisation->update($request->only([
-                'name',
-                'description',
-                'github_link',
-                'live_link',
-                'user_id'
-            ]) +
-                ['image' => $imageName]);
-        } else {
-            $realisation->update($request->only([
-                'name',
-                'description',
-                'github_link',
-                'live_link',
-                'user_id'
-            ]));
+            $realisation->image = $imageName;
         }
+
+        $realisation->github_link = $request->github_link;
+        $realisation->live_link = $request->live_link;
+        $realisation->user_id = $request->user_id;
+        $realisation->updated_at = now();
+        $realisation->save();
+
+        $tags = explode(",", $request->get('tags'));
+        $tag_ids = [];
+        foreach ($tags as $tag) {
+            $tag_db = Tag::where('name', trim($tag))->firstOrCreate(['name' => trim($tag)]);
+            $tag_ids[] = $tag_db->id;
+        }
+        $realisation->tags()->sync($tag_ids);
 
         return response()->json([
             'status_code' => 200,

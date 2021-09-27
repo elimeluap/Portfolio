@@ -17,6 +17,8 @@
                 <th scope="col">Description</th>
                 <th scope="col">Image</th>
                 <th scope="col">Liens</th>
+                <th scope="col">Actions</th>
+                <th scope="col">Tags</th>
               </tr>
             </thead>
             <tbody>
@@ -52,6 +54,15 @@
                     variant="danger"
                     >Supprimer</b-button
                   >
+                </td>
+                <td scope="row">
+                  <ul
+                    v-for="tag in realisation.tags"
+                    :key="tag.id"
+                    class="tags-container"
+                  >
+                    <li>{{ tag.name }}</li>
+                  </ul>
                 </td>
               </tr>
             </tbody>

@@ -9,6 +9,13 @@ let mutations = {
   },
 
   /**
+   * Hydrate les tags
+   */
+  SET_TAGS(state, data) {
+    state.tags = data;
+  },
+
+  /**
    * Hydrate les infos de l'utilisateur
    */
   LOGIN_USER(state, data) {

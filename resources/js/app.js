@@ -61,5 +61,6 @@ const app = new Vue({
       this.$store.dispatch('loginUser', logInfosJSON);
     }
     this.$store.dispatch('setRealisations');
+    this.$store.dispatch('setTags');
   },
 });

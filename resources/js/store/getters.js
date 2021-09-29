@@ -38,6 +38,13 @@ let getters = {
   },
 
   /**
+   * Return tous les tags
+   */
+  getTags(state) {
+    return state.tags;
+  },
+
+  /**
    * Return les infos de l'utilisateur
    */
   getUserInfos(state) {

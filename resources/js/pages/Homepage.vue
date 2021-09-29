@@ -13,6 +13,21 @@
             flex-column flex-md-row flex-wrap
             justify-content-md-center
             align-items-center align-items-md-start
+            mb-4
+          "
+        >
+          <div v-for="tag in tags" :key="tag.id">
+            <button class="btn btn-primary mr-0 mr-md-1 mb-1 mb-md-0">
+              {{ tag.name }}
+            </button>
+          </div>
+        </div>
+        <div
+          class="
+            d-flex
+            flex-column flex-md-row flex-wrap
+            justify-content-md-center
+            align-items-center align-items-md-start
             overflow-hidden
           "
         >
@@ -88,6 +103,12 @@ export default {
      */
     realisations() {
       return this.$store.getters.getRealisations;
+    },
+    /**
+     * Permet d'obtenir tous les tags
+     */
+    tags() {
+      return this.$store.getters.getTags;
     },
   },
 };

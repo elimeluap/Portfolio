@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 let actions = {
   /**
    * Action qui lance la mutation SET_REALISATIONS
@@ -6,7 +8,14 @@ let actions = {
     // Transaction AJAX des réalisations
     axios
       .get('api/realisations')
-      .then((response) => commit('SET_REALISATIONS', response.data));
+      .then(response => commit('SET_REALISATIONS', response.data));
+  },
+
+  /**
+   * Action qui lance la mutation SET_TAGS
+   */
+  setTags({ commit }) {
+    axios.get('api/tags').then(response => commit('SET_TAGS', response.data));
   },
 
   /**

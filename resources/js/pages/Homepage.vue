@@ -16,8 +16,18 @@
             mb-4
           "
         >
+          <button
+            v-if="tags.length"
+            class="btn btn-primary mr-0 mr-md-1 mb-1 mb-md-0"
+            @click="tagRealisations = []"
+          >
+            Afficher tout
+          </button>
           <div v-for="tag in tags" :key="tag.id">
-            <button class="btn btn-primary mr-0 mr-md-1 mb-1 mb-md-0">
+            <button
+              class="btn btn-primary mr-0 mr-md-1 mb-1 mb-md-0"
+              @click="filterAction(tag.realisations)"
+            >
               {{ tag.name }}
             </button>
           </div>
@@ -31,7 +41,7 @@
             overflow-hidden
           "
         >
-          <div v-for="realisation in realisations" :key="realisation.id">
+          <div v-for="realisation in realisationsByTag" :key="realisation.id">
             <div class="card mb-4 mr-md-4" style="width: 18rem">
               <a :href="realisation.live_link" target="_blank">
                 <img
@@ -94,9 +104,15 @@ export default {
     Footer,
   },
   data() {
-    return {};
+    return {
+      tagRealisations: [],
+    };
   },
-  methods: {},
+  methods: {
+    filterAction(obj) {
+      this.tagRealisations = obj;
+    },
+  },
   computed: {
     /**
      * Permet d'obtenir toutes les réalisations
@@ -109,6 +125,16 @@ export default {
      */
     tags() {
       return this.$store.getters.getTags;
+    },
+    /**
+     * Permet d'obtenir toutes les réalisations d'un tag donné
+     */
+    realisationsByTag() {
+      if (this.tagRealisations.length) {
+        return this.tagRealisations;
+      } else {
+        return this.realisations;
+      }
     },
   },
 };

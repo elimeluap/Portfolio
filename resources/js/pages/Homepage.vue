@@ -1,7 +1,6 @@
 <template>
   <div>
     <Header />
-    <Hero />
     <About />
     <!-- Works -->
     <section class="py-4 works" id="works">
@@ -89,7 +88,6 @@
 
 <script>
 import Header from "../components/Header";
-import Hero from "../components/Hero";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
@@ -98,7 +96,6 @@ export default {
   name: "Homepage",
   components: {
     Header,
-    Hero,
     About,
     Contact,
     Footer,

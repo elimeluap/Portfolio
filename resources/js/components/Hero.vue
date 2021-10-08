@@ -1,20 +1,18 @@
 <template>
   <!-- Hero -->
-  <section>
-    <div
-      class="jumbotron d-flex justify-content-center align-items-center mb-0 hero"
-    >
-      <div class="container text-center">
-        <h1 class="my-4">Paul-Emile ANTOINE</h1>
-        <h2 class="my-4">Développeur web</h2>
+  <div class="custom-centering hero">
+    <div class="mb-0">
+      <div class="text-center">
+        <h1 class="text-white my-4">Paul-Emile ANTOINE</h1>
+        <h2 class="text-white my-4">Développeur web</h2>
         <div class="my-4">
-          <a class="btn btn-primary btn-lg" href="#about" role="button"
-            >En savoir plus</a
+          <a class="btn btn-lg text-white" href="#" role="button"
+            >Contactez-moi</a
           >
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

@@ -1,67 +1,75 @@
 <template>
   <!-- Contact -->
-  <section class="py-4 contact" id="contact">
+  <div class="section-sizing">
     <div class="container">
-      <h3 class="my-4 text-center">Me contacter</h3>
-      <form class="py-4" @submit.prevent="sendContactMail">
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <input
-              type="text"
-              class="form-control"
-              id="inputName"
-              placeholder="Nom"
-              v-model="formData.name"
-            />
+      <h3 class="text-white text-center custom-title">Contact</h3>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="p-4 text-white text-justify">
+              <h3 class="px-4 text-white">HEY !</h3>
+              <p class="px-4">
+                Actuellement en fin de cursus en développement web à l'IEPS
+                Fléron, je cherche à effectuer un stage en entreprise.
+              </p>
+              <p class="px-4">
+                Lors de mes deux années d'études, j'ai appris le HTML
+                sémantique, le CSS ainsi que la mise en place d'un framework CSS
+                personnalisé.
+              </p>
+              <p class="px-4">
+                Je me suis familiarisé avec la structure MVC, le framework PHP
+                Laravel et son moteur de template Blade.
+              </p>
+              <p class="px-4">
+                En outre, j'ai également mis en place la partie front d'un site
+                avec Vue.js, VueX et l'API Laravel.
+              </p>
+              <p class="px-4">
+                Je souhaiterais maintenant parfaire mes connaissances en
+                développement au sein d'un environnement professionnel.
+              </p>
+            </div>
           </div>
-          <div class="form-group col-md-6">
-            <input
-              type="email"
-              class="form-control"
-              id="inputEmail"
-              placeholder="Email"
-              v-model="formData.email"
-            />
-          </div>
-          <div class="form-group col-md-12">
-            <textarea
-              rows="5"
-              class="form-control"
-              id="inputMessage"
-              placeholder="Message"
-              v-model="formData.message"
-            ></textarea>
+          <div class="col-md-6">
+            <form class="p-4">
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="inputName"
+                    placeholder="Nom"
+                  />
+                </div>
+                <div class="form-group col-md-12">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="inputEmail"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="form-group col-md-12">
+                  <textarea
+                    rows="5"
+                    class="form-control"
+                    id="inputMessage"
+                    placeholder="Message"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="py-5 text-center text-md-left">
+                <button type="submit" class="btn btn-primary btn-lg mt-3">
+                  Envoyer
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-        <div class="mt-2 text-center">
-          <button type="submit" class="btn btn-secondary btn-lg">
-            Envoyer
-          </button>
-        </div>
-      </form>
-      <div class="py-4 mt-4">
-        <ul class="d-flex justify-content-center align-items-center m-0">
-          <li class="mr-4">
-            <a href="https://codepen.io/peantoine-dev" target="_blank"
-              ><i class="fab fa-codepen"></i
-            ></a>
-          </li>
-          <li class="mr-4">
-            <a href="https://github.com/peantoine-dev" target="_blank"
-              ><i class="fab fa-github"></i
-            ></a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/paul-emile-antoine-8628bb128/"
-              target="_blank"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </li>
-        </ul>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

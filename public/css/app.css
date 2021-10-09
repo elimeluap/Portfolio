@@ -12765,6 +12765,30 @@ html {
   margin: 0.5rem 0.3rem;
 }
 
+.form-control,
+.form-control:active,
+.form-control:focus {
+  background: #171a1f;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-radius: 0;
+  box-shadow: none !important;
+  resize: none;
+}
+
+.form-control::-moz-placeholder {
+  color: #fff;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #fff;
+}
+
+.form-control::placeholder {
+  color: #fff;
+}
+
 .tags-container {
   padding: 0;
   list-style: none;

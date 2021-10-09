@@ -171,6 +171,33 @@ html {
   margin: 0 auto;
 }
 
+.bg-image {
+  background: linear-gradient(0deg, rgba(0, 92, 250, 1), rgba(0, 92, 250, 0.5)),
+    url('./../../public/assets/images/intro-bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0;
+  overflow-x: hidden;
+}
+
+.skills-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill {
+  font-size: 1rem;
+  font-weight: bold;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  margin: 0.5rem 0.3rem;
+}
+
 .tags-container {
   padding: 0;
   list-style: none;

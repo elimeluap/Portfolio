@@ -77,6 +77,7 @@
       </div>
     </section>
     <About />
+    <Skills />
     <Contact />
     <Footer />
   </div>
@@ -85,6 +86,7 @@
 <script>
 import Header from "../components/Header";
 import About from "../components/About";
+import Skills from "../components/Skills.vue";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -93,6 +95,7 @@ export default {
   components: {
     Header,
     About,
+    Skills,
     Contact,
     Footer,
   },

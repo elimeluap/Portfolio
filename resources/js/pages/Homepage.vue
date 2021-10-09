@@ -29,14 +29,14 @@
                     v-if="realisation.github_link !== null"
                     :href="realisation.github_link"
                     target="_blank"
-                    class="btn btn-primary"
+                    class="btn btn-primary btn-lg"
                     >GitHub</a
                   >
                   <a
                     v-if="realisation.live_link !== null"
                     :href="realisation.live_link"
                     target="_blank"
-                    class="btn btn-secondary"
+                    class="btn btn-secondary btn-lg"
                     >Live</a
                   >
                 </div>
@@ -68,7 +68,7 @@
                   >
                 </div>
                 <b-button size="md" variant="dark" @click="close()">
-                  Close
+                  Fermer
                 </b-button>
               </template>
             </b-modal>

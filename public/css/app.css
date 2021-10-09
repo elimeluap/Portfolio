@@ -12730,7 +12730,32 @@ html {
   padding: 0.3em 0.5em;
 }
 
+.img-border {
+  border: 2px solid #005cfa;
+}
+
+.cv-btn-container {
+  padding: 4rem 0 4rem 0;
+  margin: 0 auto;
+}
+
 .tags-container {
   padding: 0;
   list-style: none;
+}
+
+@media screen and (min-width: 768px) {
+  .custom-vertical-centering {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .cv-btn-container {
+    padding: 4rem 0 4rem 1.5rem;
+  }
+
+  .skills-container {
+    width: 30% !important;
+  }
 }

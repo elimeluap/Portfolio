@@ -12789,6 +12789,23 @@ html {
   color: #fff;
 }
 
+footer {
+  background: #005cfa;
+  padding: 0.72rem 0;
+}
+
+.social-footer ul {
+  padding: 0;
+  list-style: none;
+}
+.social-footer ul li a {
+  font-size: 1.4rem;
+  color: #fff;
+}
+.social-footer ul li a:hover {
+  color: #171a1f !important;
+}
+
 .tags-container {
   padding: 0;
   list-style: none;

@@ -12789,7 +12789,7 @@ html {
   color: #fff;
 }
 
-footer {
+.main-footer {
   background: #005cfa;
   padding: 0.72rem 0;
 }
@@ -12815,7 +12815,7 @@ footer {
   .custom-vertical-centering {
     position: relative;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-35%);
   }
 
   .cv-btn-container {

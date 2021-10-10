@@ -1,6 +1,6 @@
 <template>
   <!-- Skills -->
-  <section class="bg-white section-sizing bg-image">
+  <section class="bg-white section-sizing bg-image" id="skills">
     <div class="container">
       <h3 class="text-white text-center custom-title">Skills et softwares</h3>
       <div class="custom-centering skills-container">

@@ -1,6 +1,6 @@
 <template>
   <!-- About -->
-  <section class="section-sizing">
+  <section class="section-sizing" id="apropos">
     <div class="container">
       <h3 class="text-white text-center custom-title">À propos</h3>
       <div class="container-fluid">

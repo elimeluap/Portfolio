@@ -103,7 +103,7 @@ export default {
             size: "sm",
             buttonSize: "sm",
             okVariant: "danger",
-            cancelVariant: "primary",
+            cancelVariant: "dark",
             okTitle: "Oui",
             cancelTitle: "Annuler",
             footerClass: "bg-white p-2",

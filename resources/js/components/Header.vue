@@ -55,18 +55,24 @@
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link nav-link-homepage" href="#">Réalisations</a>
+                <a class="nav-link nav-link-homepage" href="#realisations"
+                  >Réalisations</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-link-homepage" href="#">À propos</a>
+                <a class="nav-link nav-link-homepage" href="#apropos"
+                  >À propos</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-link-homepage" href="#"
+                <a class="nav-link nav-link-homepage" href="#skills"
                   >Skills et softwares</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-link-homepage" href="#">Contact</a>
+                <a class="nav-link nav-link-homepage" href="#contact"
+                  >Contact</a
+                >
               </li>
             </ul>
           </div>

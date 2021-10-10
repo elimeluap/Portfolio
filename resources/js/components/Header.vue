@@ -25,7 +25,9 @@
               </li>
             </ul>
           </div>
-          <router-link :to="{ name: 'homepage' }" class="navbar-brand"
+          <router-link
+            :to="{ name: 'homepage' }"
+            class="navbar-brand text-primary"
             >PEA</router-link
           >
           <button
@@ -53,16 +55,18 @@
           >
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#">Réalisations</a>
+                <a class="nav-link nav-link-homepage" href="#">Réalisations</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">À propos</a>
+                <a class="nav-link nav-link-homepage" href="#">À propos</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Skills et softwares</a>
+                <a class="nav-link nav-link-homepage" href="#"
+                  >Skills et softwares</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link nav-link-homepage" href="#">Contact</a>
               </li>
             </ul>
           </div>

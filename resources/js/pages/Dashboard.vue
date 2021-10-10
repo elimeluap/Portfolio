@@ -5,7 +5,9 @@
     <section class="bg-light">
       <div class="container">
         <div class="my-4">
-          <router-link :to="{ name: 'add' }" class="btn btn-primary btn-small"
+          <router-link
+            :to="{ name: 'add' }"
+            class="btn btn-dark btn-small custom-border-btn"
             >Ajouter</router-link
           >
         </div>
@@ -34,7 +36,7 @@
                     class="img-fluid w-75"
                   />
                 </td>
-                <td scope="row">
+                <td scope="row" class="custom-form-link">
                   <a
                     :href="realisation.github_link"
                     target="_blank"
@@ -46,12 +48,13 @@
                 <td scope="row">
                   <router-link
                     :to="{ name: 'edit', params: { id: realisation.id } }"
-                    class="btn btn-success btn-small mb-2"
+                    class="btn btn-success btn-small mb-2 custom-border-btn"
                     >Editer</router-link
                   >
                   <b-button
                     @click="deleteRealisation(realisation.id)"
                     variant="danger"
+                    class="custom-border-btn"
                     >Supprimer</b-button
                   >
                 </td>

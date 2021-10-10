@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
         <router-link :to="{ name: 'dashboard' }" class="navbar-brand"
-          >Dashboard</router-link
+          >Tableau de bord</router-link
         >
         <button
           class="navbar-toggler"
@@ -22,13 +22,17 @@
           id="navbarNavDropdown"
         >
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <router-link :to="{ name: 'homepage' }" class="nav-link"
-                >Home</router-link
+            <li class="nav-item">
+              <router-link
+                :to="{ name: 'homepage' }"
+                class="nav-link text-white"
+                >Accueil</router-link
               >
             </li>
-            <li class="nav-item active">
-              <a href="#" class="nav-link" @click="logoutUser">Logout</a>
+            <li class="nav-item">
+              <a href="#" class="nav-link text-white" @click="logoutUser"
+                >Se déconnecter</a
+              >
             </li>
           </ul>
         </div>

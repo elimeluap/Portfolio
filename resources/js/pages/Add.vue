@@ -11,7 +11,7 @@
                 <div class="form-group">
                   <input
                     type="text"
-                    class="form-control"
+                    class="custom-form-control"
                     name="name"
                     placeholder="Nom"
                     v-model="formData.name"
@@ -53,16 +53,18 @@
                   <b-form-tags
                     input-id="tags-pills"
                     v-model="formData.tags"
-                    tag-variant="primary"
+                    tag-variant="dark"
                     size="md"
                     separator=" "
+                    add-button-variant="dark"
+                    class="custom-form-control"
                     placeholder="Tags"
                   ></b-form-tags>
                 </div>
                 <div class="form-group">
                   <input
                     type="text"
-                    class="form-control"
+                    class="custom-form-control"
                     name="github_link"
                     placeholder="GitHub"
                     v-model="formData.github_link"
@@ -71,7 +73,7 @@
                 <div class="form-group">
                   <input
                     type="text"
-                    class="form-control"
+                    class="custom-form-control"
                     name="live_link"
                     placeholder="Live"
                     v-model="formData.live_link"
@@ -80,7 +82,9 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <button class="btn btn-primary">Ajouter</button>
+                      <button class="btn btn-dark custom-border-btn">
+                        Ajouter
+                      </button>
                     </div>
                   </div>
                 </div>

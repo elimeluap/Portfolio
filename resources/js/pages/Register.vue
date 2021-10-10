@@ -1,17 +1,15 @@
 <template>
-  <section class="custom-form-container">
+  <section class="vh-100 d-flex justify-content-center align-items-center">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-6">
           <form class="card" @submit.prevent="registerUser">
-            <h3 class="card-header bg-primary text-secondary">
-              Créer un compte
-            </h3>
+            <h3 class="card-header bg-dark text-white">Créer un compte</h3>
             <div class="card-body">
               <div class="form-group">
                 <input
                   type="text"
-                  class="form-control"
+                  class="custom-form-control"
                   name="name"
                   placeholder="Nom"
                   v-model="formData.name"
@@ -21,7 +19,7 @@
               <div class="form-group">
                 <input
                   type="email"
-                  class="form-control"
+                  class="custom-form-control"
                   name="email"
                   placeholder="Email"
                   v-model="formData.email"
@@ -31,7 +29,7 @@
               <div class="form-group">
                 <input
                   type="password"
-                  class="form-control"
+                  class="custom-form-control"
                   name="password"
                   placeholder="Mot de passe"
                   v-model="formData.password"
@@ -41,7 +39,7 @@
               <div class="form-group">
                 <input
                   type="password"
-                  class="form-control"
+                  class="custom-form-control"
                   name="password_confirmation"
                   placeholder="Confirmer"
                   v-model="formData.password_confirmation"
@@ -51,10 +49,12 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
-                    <button class="btn btn-primary">S'inscrire</button>
+                    <button class="btn btn-dark custom-border-btn">
+                      S'inscrire
+                    </button>
                   </div>
                 </div>
-                <div class="col-md-6 text-right">
+                <div class="col-md-6 text-right custom-form-link">
                   <router-link :to="{ name: 'login' }"
                     >Se connecter à un compte existant</router-link
                   >

@@ -12602,13 +12602,43 @@ html {
   background: #171a1f;
 }
 
+.bg-header {
+  background: url(/images/header-bg.jpeg?a607f9cb33db4e6680d76a44c8aa5180);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 0;
+  overflow-x: hidden;
+}
+
+.visibleNav {
+  background: #fff !important;
+  transition: all 500ms ease-in-out;
+}
+.visibleNav .social-header ul li a {
+  color: #171a1f;
+}
+.visibleNav .animated-icon1 span {
+  background: #171a1f;
+}
+.visibleNav #navbarNavDropdown .nav-link-homepage {
+  color: #171a1f !important;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
 .social-header ul {
   padding: 0;
   list-style: none;
 }
 .social-header ul li a {
   font-size: 1.4rem;
-  color: #171a1f;
+  color: #fff;
 }
 .social-header ul li a:hover {
   color: #005cfa;
@@ -12645,7 +12675,7 @@ html {
   display: block;
   width: 100%;
   height: 3px;
-  background: #171a1f;
+  background: #fff;
   border-radius: 9px;
   transform: rotate(0deg);
   transition: 0.25s ease-in-out;
@@ -12689,7 +12719,7 @@ html {
 }
 
 .nav-link-homepage {
-  color: #171a1f !important;
+  color: #fff !important;
 }
 .nav-link-homepage:hover {
   color: #005cfa !important;
@@ -12739,7 +12769,7 @@ html {
 }
 
 .bg-image {
-  background: linear-gradient(0deg, #005cfa, rgba(0, 92, 250, 0.5)), url(/images/intro-bg.jpg?d5c958ae920f6f0c4484c5776dcdbddd);
+  background: linear-gradient(0deg, #005cfa, rgba(0, 92, 250, 0.5)), url(/images/skills-bg.jpeg?a2beb0bab2f39e056b5b45dbebda4a7b);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12822,6 +12852,10 @@ html {
   line-height: 1.6;
   outline: none !important;
   background-clip: padding-box;
+}
+
+.b-form-tags.focus {
+  border-color: #ced4da;
 }
 
 .custom-border-btn {

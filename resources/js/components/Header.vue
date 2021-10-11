@@ -1,8 +1,11 @@
 <template>
-  <section class="section-sizing">
+  <div class="section-sizing bg-header">
     <!-- Header -->
-    <header>
-      <nav class="navbar navbar-light bg-white">
+    <header class="sticky">
+      <nav
+        class="navbar navbar-light bg-transparent"
+        :class="{ visibleNav: isSticky }"
+      >
         <div class="container">
           <div class="social-header">
             <ul class="d-flex justify-content-center align-items-center m-0">
@@ -80,7 +83,7 @@
       </nav>
     </header>
     <Hero />
-  </section>
+  </div>
 </template>
 
 <script>
@@ -93,14 +96,27 @@ export default {
   data() {
     return {
       isOpen: false,
+      isSticky: false,
+      scrollPosition: 0,
     };
   },
   methods: {
     openHamburgerMenu() {
       this.isOpen = !this.isOpen;
     },
+    handleScroll(event) {
+      this.scrollPosition = window.scrollY;
+      if (this.scrollPosition >= 200) {
+        this.isSticky = true;
+      } else {
+        this.isSticky = false;
+      }
+    },
   },
   computed: {},
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
 };
 </script>
 

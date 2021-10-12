@@ -6,7 +6,7 @@
         <h1 class="text-white my-4">Paul-Emile ANTOINE</h1>
         <h2 class="text-white my-4">Développeur web</h2>
         <div class="my-4">
-          <a class="btn btn-lg text-white" href="#" role="button"
+          <a class="btn btn-lg text-white" href="#contact" role="button"
             >Contactez-moi</a
           >
         </div>

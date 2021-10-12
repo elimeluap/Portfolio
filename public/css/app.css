@@ -12611,6 +12611,10 @@ html {
   overflow-x: hidden;
 }
 
+.navbar {
+  transition: all 500ms ease-in-out;
+}
+
 .visibleNav {
   background: #fff !important;
   transition: all 500ms ease-in-out;

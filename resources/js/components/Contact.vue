@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <form class="p-4">
+            <form class="p-4" @submit.prevent="sendContactMail">
               <div class="form-row">
                 <div class="form-group col-md-12">
                   <input
@@ -40,6 +40,7 @@
                     class="form-control"
                     id="inputName"
                     placeholder="Nom"
+                    v-model="formData.name"
                   />
                 </div>
                 <div class="form-group col-md-12">
@@ -48,6 +49,7 @@
                     class="form-control"
                     id="inputEmail"
                     placeholder="Email"
+                    v-model="formData.email"
                   />
                 </div>
                 <div class="form-group col-md-12">
@@ -56,6 +58,7 @@
                     class="form-control"
                     id="inputMessage"
                     placeholder="Message"
+                    v-model="formData.message"
                   ></textarea>
                 </div>
               </div>

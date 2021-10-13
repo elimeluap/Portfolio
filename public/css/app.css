@@ -12603,7 +12603,7 @@ html {
 }
 
 .bg-header {
-  background: url(/images/header-bg.jpeg?a607f9cb33db4e6680d76a44c8aa5180);
+  background: url(/images/header-bg.jpeg?b2d6fd3ce7f24120bca79e823115634a);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12736,10 +12736,6 @@ html {
   transform: translate(-50%, -50%);
 }
 
-.hero a:hover {
-  color: #005cfa !important;
-}
-
 .custom-title {
   padding: 4rem 0;
 }
@@ -12773,7 +12769,7 @@ html {
 }
 
 .bg-image {
-  background: linear-gradient(0deg, #005cfa, rgba(0, 92, 250, 0.5)), url(/images/skills-bg.jpeg?a2beb0bab2f39e056b5b45dbebda4a7b);
+  background: linear-gradient(0deg, #005cfa, rgba(0, 92, 250, 0.5)), url(/images/skills-bg.jpeg?8308c010854ad3c9a9b96733d2f14f65);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -88,23 +88,18 @@ export default {
      */
     registerUser() {
       axios.get("/sanctum/csrf-cookie").then((res) => {
-        axios
-          .post("/api/register", this.formData)
-          .then((res) => {
-            if (res.data.status_code === 200) {
-              this.$notify.success({
-                msg: `Votre compte a bien été créé`,
-              });
-              this.$router.push({ name: "login" });
-            } else if (res.data.status_code === 400) {
-              this.$notify.error({
-                msg: "Une erreur s'est produite. Veuillez vérifier que vous avez bien rempli tous les champs.",
-              });
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        axios.post("/api/register", this.formData).then((res) => {
+          if (res.data.status_code === 200) {
+            this.$notify.success({
+              msg: `Votre compte a bien été créé`,
+            });
+            this.$router.push({ name: "login" });
+          } else if (res.data.status_code === 400) {
+            this.$notify.error({
+              msg: "Une erreur s'est produite. Veuillez vérifier que vous avez bien rempli tous les champs.",
+            });
+          }
+        });
       });
     },
   },

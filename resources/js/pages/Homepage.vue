@@ -13,7 +13,7 @@
             align-items-center align-items-md-start
           "
         >
-          <div v-for="realisation in realisationsByTag" :key="realisation.id">
+          <div v-for="realisation in realisations" :key="realisation.id">
             <div class="card mb-4 mr-md-4" style="width: 18rem">
               <a v-b-modal.modal-lg="modalId(realisation.id)"
                 ><img
@@ -100,14 +100,9 @@ export default {
     Footer,
   },
   data() {
-    return {
-      tagRealisations: [],
-    };
+    return {};
   },
   methods: {
-    filterAction(obj) {
-      this.tagRealisations = obj;
-    },
     modalId(n) {
       return "modal" + n;
     },
@@ -124,16 +119,6 @@ export default {
      */
     tags() {
       return this.$store.getters.getTags;
-    },
-    /**
-     * Permet d'obtenir toutes les réalisations d'un tag donné
-     */
-    realisationsByTag() {
-      if (this.tagRealisations.length) {
-        return this.tagRealisations;
-      } else {
-        return this.realisations;
-      }
     },
   },
 };

@@ -113,23 +113,15 @@ export default {
         )
         .then((value) => {
           if (value === true) {
-            axios
-              .post("/api/delete", { id: id })
-              .then((res) => {
-                if (res.data.status_code === 200) {
-                  this.$notify.success({
-                    msg: "La réalisation a bien été supprimée",
-                  });
-                  this.$store.dispatch("setRealisations", res.data);
-                }
-              })
-              .catch((error) => {
-                console.log(error.response);
-              });
+            axios.post("/api/delete", { id: id }).then((res) => {
+              if (res.data.status_code === 200) {
+                this.$notify.success({
+                  msg: "La réalisation a bien été supprimée",
+                });
+                this.$store.dispatch("setRealisations", res.data);
+              }
+            });
           }
-        })
-        .catch((error) => {
-          console.log(error.response);
         });
     },
   },

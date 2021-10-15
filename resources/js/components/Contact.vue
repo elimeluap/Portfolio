@@ -101,7 +101,6 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error.response);
           if (error.response.status === 500) {
             this.$notify.error({
               msg: "Veuillez remplir tous les champs du formulaire",

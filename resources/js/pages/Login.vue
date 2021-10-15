@@ -70,30 +70,25 @@ export default {
      */
     loginUser() {
       axios.get("/sanctum/csrf-cookie").then((res) => {
-        axios
-          .post("/api/login", this.formData)
-          .then((res) => {
-            if (res.data.status_code === 200) {
-              this.$notify.success({
-                msg: "Vous êtes connecté",
-              });
-              this.$store.dispatch("loginUser", res.data);
-              let logInfos = JSON.stringify(res.data);
-              sessionStorage.setItem("user", logInfos);
-              this.$router.push({ name: "dashboard" });
-            } else if (res.data.status_code === 400) {
-              this.$notify.error({
-                msg: "Une erreur s'est produite. Veuillez réessayer.",
-              });
-            } else if (res.data.status_code === 500) {
-              this.$notify.error({
-                msg: "Une erreur s'est produite. Veuillez vérifier vos identifiants.",
-              });
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
+        axios.post("/api/login", this.formData).then((res) => {
+          if (res.data.status_code === 200) {
+            this.$notify.success({
+              msg: "Vous êtes connecté",
+            });
+            this.$store.dispatch("loginUser", res.data);
+            let logInfos = JSON.stringify(res.data);
+            sessionStorage.setItem("user", logInfos);
+            this.$router.push({ name: "dashboard" });
+          } else if (res.data.status_code === 400) {
+            this.$notify.error({
+              msg: "Une erreur s'est produite. Veuillez réessayer.",
+            });
+          } else if (res.data.status_code === 500) {
+            this.$notify.error({
+              msg: "Une erreur s'est produite. Veuillez vérifier vos identifiants.",
+            });
+          }
+        });
       });
     },
   },

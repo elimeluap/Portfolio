@@ -19,14 +19,6 @@
                   <p class="text-danger"></p>
                 </div>
                 <div class="form-group">
-                  <!--<textarea
-                    class="form-control"
-                    name="description"
-                    placeholder="Description"
-                    cols="60"
-                    rows="5"
-                    v-model="formData.description"
-                  ></textarea>-->
                   <editor
                     name="description"
                     placeholder="Description"
@@ -145,20 +137,15 @@ export default {
       formData.append("github_link", this.formData.github_link);
       formData.append("live_link", this.formData.live_link);
       formData.append("user_id", this.formData.user_id);
-      axios
-        .post("/api/add", formData)
-        .then((res) => {
-          if (res.data.status_code === 200) {
-            this.$notify.success({
-              msg: "Votre réalisation a bien été ajoutée",
-            });
-            this.$store.dispatch("setRealisations", res.data);
-            this.$router.push("/dashboard");
-          }
-        })
-        .catch((error) => {
-          console.log(error.response);
-        });
+      axios.post("/api/add", formData).then((res) => {
+        if (res.data.status_code === 200) {
+          this.$notify.success({
+            msg: "Votre réalisation a bien été ajoutée",
+          });
+          this.$store.dispatch("setRealisations", res.data);
+          this.$router.push("/dashboard");
+        }
+      });
     },
     /**
      * Gestion de l'upload de l'image et de sa preview

@@ -98,6 +98,9 @@ export default {
             this.$notify.success({
               msg: "Votre email a bien été envoyé",
             });
+            this.formData.name = "";
+            this.formData.email = "";
+            this.formData.message = "";
           }
         })
         .catch((error) => {

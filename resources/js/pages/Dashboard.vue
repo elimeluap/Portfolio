@@ -40,10 +40,16 @@
                   <a
                     :href="realisation.github_link"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="d-block mb-4"
                     >GitHub</a
                   >
-                  <a :href="realisation.live_link" target="_blank">Live</a>
+                  <a
+                    :href="realisation.live_link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Live</a
+                  >
                 </td>
                 <td scope="row">
                   <router-link

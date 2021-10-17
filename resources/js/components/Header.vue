@@ -10,12 +10,20 @@
           <div class="social-header">
             <ul class="d-flex justify-content-center align-items-center m-0">
               <li class="mr-4">
-                <a href="https://codepen.io/peantoine-dev" target="_blank"
+                <a
+                  href="https://codepen.io/peantoine-dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="CodePen"
                   ><i class="fab fa-codepen"></i
                 ></a>
               </li>
               <li class="mr-4">
-                <a href="https://github.com/elimeluap" target="_blank"
+                <a
+                  href="https://github.com/elimeluap"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
                   ><i class="fab fa-github"></i
                 ></a>
               </li>
@@ -23,6 +31,8 @@
                 <a
                   href="https://www.linkedin.com/in/paul-emile-antoine-8628bb128/"
                   target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Linkedin"
                   ><i class="fab fa-linkedin"></i
                 ></a>
               </li>

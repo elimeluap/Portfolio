@@ -29,6 +29,7 @@
                     v-if="realisation.github_link !== null"
                     :href="realisation.github_link"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-primary btn-lg"
                     >GitHub</a
                   >
@@ -36,6 +37,7 @@
                     v-if="realisation.live_link !== null"
                     :href="realisation.live_link"
                     target="_blank"
+                    rel="noopener noreferrer"
                     class="btn btn-secondary btn-lg"
                     >Live</a
                   >

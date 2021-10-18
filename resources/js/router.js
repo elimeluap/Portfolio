@@ -13,8 +13,9 @@ import Edit from './pages/Edit';
 // Création du routing
 Vue.use(Router);
 export default new Router({
-  /*mode: 'history',
-  hash: false,*/
+  mode: 'history',
+  base: '/',
+  fallback: true,
   routes: [
     {
       path: '/',

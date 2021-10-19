@@ -3,12 +3,12 @@ import Router from 'vue-router';
 import store from './store/index';
 
 // Chargement des composants des différentes routes
-import Homepage from './pages/Homepage';
-import Login from './pages/Login';
-import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
-import Add from './pages/Add';
-import Edit from './pages/Edit';
+const Homepage = () => import('./pages/Homepage');
+const Login = () => import('./pages/Login');
+const Register = () => import('./pages/Register');
+const Dashboard = () => import('./pages/Dashboard');
+const Add = () => import('./pages/Add');
+const Edit = () => import('./pages/Edit');
 
 // Création du routing
 Vue.use(Router);

@@ -1,6 +1,6 @@
 <template>
   <!-- Contact -->
-  <div class="section-sizing" id="contact">
+  <section class="section-sizing" id="contact">
     <div class="container">
       <h3 class="text-white text-center custom-title">Contact</h3>
       <div class="container-fluid">
@@ -72,7 +72,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

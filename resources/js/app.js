@@ -28,7 +28,7 @@ window.Vue = require('vue').default;
 import router from './router.js';
 import store from './store/index.js';
 import VueNotify from 'vuejs-notify';
-import { BootstrapVue } from 'bootstrap-vue';
+import { ButtonPlugin, FormTagsPlugin, ModalPlugin } from 'bootstrap-vue';
 import '@morioh/v-quill-editor/dist/editor.css';
 import Editor from '@morioh/v-quill-editor';
 
@@ -39,7 +39,9 @@ Vue.use(VueNotify, {
 });
 
 // Plugin Vue pour intégrer des composants Bootstrap
-Vue.use(BootstrapVue);
+Vue.use(ButtonPlugin);
+Vue.use(FormTagsPlugin);
+Vue.use(ModalPlugin);
 
 // Plugin Vue pour intégrer un éditeur Rich Text
 Vue.use(Editor);

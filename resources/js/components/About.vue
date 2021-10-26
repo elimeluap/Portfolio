@@ -22,25 +22,26 @@
           <div class="col-md-6">
             <div class="text-white text-justify">
               <p class="px-4">
-                Actuellement en fin de cursus en développement web à l'IEPS
-                Fléron, je cherche à effectuer un stage en entreprise.
+                Récemment diplômé de l’IEPS Fléron (Liège) en développement web,
+                je suis désormais à la recherche d’un poste de développeur
+                front-end junior dans lequel m’investir et grandir.
               </p>
               <p class="px-4">
-                Lors de mes deux années d'études, j'ai appris le HTML
-                sémantique, le CSS ainsi que la mise en place d'un framework CSS
-                personnalisé.
+                Lors de mes études, j’ai appris le HTML sémantique, le CSS et
+                j’ai pu mettre en place un framework CSS personnalisé.
               </p>
               <p class="px-4">
-                Je me suis familiarisé avec la structure MVC, le framework PHP
-                Laravel et son moteur de template Blade.
+                Je me suis familiarisé avec la structure MVC en réalisant divers
+                projets en PHP procédural avant de découvrir le framework
+                Laravel.
               </p>
               <p class="px-4">
-                En outre, j'ai également mis en place la partie front d'un site
-                avec Vue.js, VueX et l'API Laravel.
+                Côté front j’ai créé divers projets en Vanilla JavaScript avant
+                de me diriger vers le framework Vue.js.
               </p>
               <p class="px-4">
-                Je souhaiterais maintenant parfaire mes connaissances en
-                développement au sein d'un environnement professionnel.
+                Ayant reçu une solide formation, j’aimerais approfondir mes
+                connaissances auprès de développeurs confirmés.
               </p>
             </div>
             <div class="text-center text-md-left cv-btn-container">

@@ -9,26 +9,19 @@
             <div class="p-4 text-white text-justify">
               <h3 class="px-4 text-white">HEY !</h3>
               <p class="px-4">
-                Actuellement en fin de cursus en développement web à l'IEPS
-                Fléron, je cherche à effectuer un stage en entreprise.
+                Vous avez une idée, un projet de site web en tête mais vous ne
+                savez pas comment vous y prendre ?
               </p>
               <p class="px-4">
-                Lors de mes deux années d'études, j'ai appris le HTML
-                sémantique, le CSS ainsi que la mise en place d'un framework CSS
-                personnalisé.
+                Que vous soyez un particulier, un artiste ou une petite
+                entreprise, n’hésitez pas à me contacter à l’aide du formulaire
+                ci-contre.
               </p>
               <p class="px-4">
-                Je me suis familiarisé avec la structure MVC, le framework PHP
-                Laravel et son moteur de template Blade.
+                Ensemble, nous discturerons de votre projet et établirons un
+                devis juste et adapté à vos besoins.
               </p>
-              <p class="px-4">
-                En outre, j'ai également mis en place la partie front d'un site
-                avec Vue.js, VueX et l'API Laravel.
-              </p>
-              <p class="px-4">
-                Je souhaiterais maintenant parfaire mes connaissances en
-                développement au sein d'un environnement professionnel.
-              </p>
+              <p class="px-4">À bientôt ! 😊</p>
             </div>
           </div>
           <div class="col-md-6">

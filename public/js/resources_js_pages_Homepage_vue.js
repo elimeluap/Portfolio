@@ -68,6 +68,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {};
@@ -89,13 +90,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -1227,31 +1221,31 @@ var staticRenderFns = [
                 _c("div", { staticClass: "text-white text-justify" }, [
                   _c("p", { staticClass: "px-4" }, [
                     _vm._v(
-                      "\n              Actuellement en fin de cursus en développement web à l'IEPS\n              Fléron, je cherche à effectuer un stage en entreprise.\n            "
+                      "\n              Récemment diplômé de l’IEPS Fléron (Liège) en développement web,\n              je suis désormais à la recherche d’un poste de développeur\n              front-end junior dans lequel m’investir et grandir.\n            "
                     )
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "px-4" }, [
                     _vm._v(
-                      "\n              Lors de mes deux années d'études, j'ai appris le HTML\n              sémantique, le CSS ainsi que la mise en place d'un framework CSS\n              personnalisé.\n            "
+                      "\n              Lors de mes études, j’ai appris le HTML sémantique, le CSS et\n              j’ai pu mettre en place un framework CSS personnalisé.\n            "
                     )
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "px-4" }, [
                     _vm._v(
-                      "\n              Je me suis familiarisé avec la structure MVC, le framework PHP\n              Laravel et son moteur de template Blade.\n            "
+                      "\n              Je me suis familiarisé avec la structure MVC en réalisant divers\n              projets en PHP procédural avant de découvrir le framework\n              Laravel.\n            "
                     )
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "px-4" }, [
                     _vm._v(
-                      "\n              En outre, j'ai également mis en place la partie front d'un site\n              avec Vue.js, VueX et l'API Laravel.\n            "
+                      "\n              Côté front j’ai créé divers projets en Vanilla JavaScript avant\n              de me diriger vers le framework Vue.js.\n            "
                     )
                   ]),
                   _vm._v(" "),
                   _c("p", { staticClass: "px-4" }, [
                     _vm._v(
-                      "\n              Je souhaiterais maintenant parfaire mes connaissances en\n              développement au sein d'un environnement professionnel.\n            "
+                      "\n              Ayant reçu une solide formation, j’aimerais approfondir mes\n              connaissances auprès de développeurs confirmés.\n            "
                     )
                   ])
                 ]),
@@ -1437,33 +1431,23 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "px-4" }, [
           _vm._v(
-            "\n              Actuellement en fin de cursus en développement web à l'IEPS\n              Fléron, je cherche à effectuer un stage en entreprise.\n            "
+            "\n              Vous avez une idée, un projet de site web en tête mais vous ne\n              savez pas comment vous y prendre ?\n            "
           )
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "px-4" }, [
           _vm._v(
-            "\n              Lors de mes deux années d'études, j'ai appris le HTML\n              sémantique, le CSS ainsi que la mise en place d'un framework CSS\n              personnalisé.\n            "
+            "\n              Que vous soyez un particulier, un artiste ou une petite\n              entreprise, n’hésitez pas à me contacter à l’aide du formulaire\n              ci-contre.\n            "
           )
         ]),
         _vm._v(" "),
         _c("p", { staticClass: "px-4" }, [
           _vm._v(
-            "\n              Je me suis familiarisé avec la structure MVC, le framework PHP\n              Laravel et son moteur de template Blade.\n            "
+            "\n              Ensemble, nous discturerons de votre projet et établirons un\n              devis juste et adapté à vos besoins.\n            "
           )
         ]),
         _vm._v(" "),
-        _c("p", { staticClass: "px-4" }, [
-          _vm._v(
-            "\n              En outre, j'ai également mis en place la partie front d'un site\n              avec Vue.js, VueX et l'API Laravel.\n            "
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "px-4" }, [
-          _vm._v(
-            "\n              Je souhaiterais maintenant parfaire mes connaissances en\n              développement au sein d'un environnement professionnel.\n            "
-          )
-        ])
+        _c("p", { staticClass: "px-4" }, [_vm._v("À bientôt ! 😊")])
       ])
     ])
   },

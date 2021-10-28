@@ -97,8 +97,14 @@ __webpack_require__.r(__webpack_exports__);
      * Réinitialisation du session storage et des infos de l'utilisateur dans le state
      */
     logoutUser: function logoutUser() {
+      var _this = this;
+
       sessionStorage.clear();
-      this.$store.dispatch("logoutUser");
+      axios.post("/api/logout", {
+        token: this.$store.state.user.token
+      }).then(function (response) {
+        _this.$store.dispatch("logoutUser", response.data);
+      });
 
       if (!sessionStorage.length) {
         this.$notify.success({

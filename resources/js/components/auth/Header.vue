@@ -52,7 +52,11 @@ export default {
      */
     logoutUser() {
       sessionStorage.clear();
-      this.$store.dispatch("logoutUser");
+      axios
+        .post("/api/logout", { token: this.$store.state.user.token })
+        .then((response) => {
+          this.$store.dispatch("logoutUser", response.data);
+        });
       if (!sessionStorage.length) {
         this.$notify.success({
           msg: "Vous êtes déconnecté",

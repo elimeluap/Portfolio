@@ -292,22 +292,7 @@ var render = function() {
                     _c("p", { staticClass: "text-danger" })
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "row" }, [
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-md-6 text-right custom-form-link" },
-                      [
-                        _c(
-                          "router-link",
-                          { attrs: { to: { name: "register" } } },
-                          [_vm._v("Créer un compte")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
+                  _vm._m(0)
                 ])
               ]
             )
@@ -322,12 +307,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-6" }, [
-      _c("div", { staticClass: "form-group" }, [
-        _c("button", { staticClass: "btn btn-dark custom-border-btn" }, [
-          _vm._v("\n                    Se connecter\n                  ")
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("button", { staticClass: "btn btn-dark custom-border-btn" }, [
+            _vm._v("\n                    Se connecter\n                  ")
+          ])
         ])
-      ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6 text-right custom-form-link" })
     ])
   }
 ]

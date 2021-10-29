@@ -31,7 +31,7 @@
               </li>
               <li class="mr-4">
                 <a
-                  href="https://github.com/peantoine-dev"
+                  href="https://github.com/elimeluap"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"

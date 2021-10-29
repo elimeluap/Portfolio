@@ -18,7 +18,7 @@
                 ci-contre.
               </p>
               <p class="px-4">
-                Ensemble, nous discturerons de votre projet et établirons un
+                Ensemble, nous discuterons de votre projet et établirons un
                 devis juste et adapté à vos besoins.
               </p>
               <p class="px-4">À bientôt ! 😊</p>

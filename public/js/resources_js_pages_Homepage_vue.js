@@ -69,6 +69,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {};
@@ -1258,7 +1263,13 @@ var staticRenderFns = [
                       "a",
                       {
                         staticClass: "btn btn-primary btn-lg",
-                        attrs: { href: "#", role: "button" }
+                        attrs: {
+                          href:
+                            "https://drive.google.com/file/d/1hDUFMVcychR0jvOuKuuJuf2wj4AgBpvR/view?usp=sharing",
+                          target: "_blank",
+                          rel: "noopener noreferrer",
+                          role: "button"
+                        }
                       },
                       [_vm._v("Mon CV")]
                     )
@@ -1443,7 +1454,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "px-4" }, [
           _vm._v(
-            "\n              Ensemble, nous discturerons de votre projet et établirons un\n              devis juste et adapté à vos besoins.\n            "
+            "\n              Ensemble, nous discuterons de votre projet et établirons un\n              devis juste et adapté à vos besoins.\n            "
           )
         ]),
         _vm._v(" "),
@@ -1537,7 +1548,7 @@ var staticRenderFns = [
                           "a",
                           {
                             attrs: {
-                              href: "https://github.com/peantoine-dev",
+                              href: "https://github.com/elimeluap",
                               target: "_blank",
                               rel: "noopener noreferrer",
                               "aria-label": "GitHub"

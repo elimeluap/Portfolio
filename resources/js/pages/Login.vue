@@ -35,9 +35,9 @@
                   </div>
                 </div>
                 <div class="col-md-6 text-right custom-form-link">
-                  <router-link :to="{ name: 'register' }"
+                  <!--<router-link :to="{ name: 'register' }"
                     >Créer un compte</router-link
-                  >
+                  >-->
                 </div>
               </div>
             </div>

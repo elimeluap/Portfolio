@@ -45,7 +45,12 @@
               </p>
             </div>
             <div class="text-center text-md-left cv-btn-container">
-              <a class="btn btn-primary btn-lg" href="#" role="button"
+              <a
+                class="btn btn-primary btn-lg"
+                href="https://drive.google.com/file/d/1hDUFMVcychR0jvOuKuuJuf2wj4AgBpvR/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                role="button"
                 >Mon CV</a
               >
             </div>
